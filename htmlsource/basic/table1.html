@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 600px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 수업 중요 태크 : table, from  -->
+    <!--
+    table
+     tr(행 - row)
+      td(열 - column) / th(제목 칼럼) : bold, 수평-Center 정렬
+    -->
+    <table border="1">
+      <tr>
+        <td>1행 1열</td>
+        <td>1행 2열</td>
+      </tr>
+      <tr>
+        <td>2행 1열</td>
+        <td>2행 2열</td>
+      </tr>
+    </table>
+    <table border="1">
+      <tr>
+        <th>1행 1열</th>
+        <th>1행 2열</th>
+      </tr>
+      <tr>
+        <td>2행 1열</td>
+        <td>2행 2열</td>
+      </tr>
+    </table>
+    <table border="3">
+      <tr>
+        <td>컬럼 1</td>
+        <td>컬럼 2</td>
+        <td>컬럼 3</td>
+      </tr>
+      <tr>
+        <td colspan="3">긴 컬럼</td>
+      </tr>
+      <tr>
+        <td colspan="2">조금 긴 컬럼1</td>
+        <td colspan="1">조금 긴 컬럼2</td>
+      </tr>
+    </table>
+
+    <table border="5">
+      <tr>
+        <td rowspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
