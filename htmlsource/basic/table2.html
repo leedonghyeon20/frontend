@@ -4,16 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-style: oblique;
+        font-size: 18px;
+      }
+      table {
+        outline: solid rgb(255, 198, 151);
+      }
+      td {
+        width: 150px;
+        border: 1px solid rgb(245, 127, 127);
+        transition: 0.4s;
+        padding: 5px 10px;
+      }
+      .col {
+        background-color: rgb(255, 229, 204);
+      }
+    </style>
   </head>
   <body>
-    <table border="1" width="600">
+    <table>
       <tr>
-        <td rowspan="3"><img src="" alt="" /></td>
-        <td colspan="4">이력서</td>
+        <td rowspan="3"><img src="../image/img2.jpg" alt="" /></td>
+        <td colspan="6">이력서</td>
       </tr>
 
       <tr>
-        <td rowspan="2">성명</td>
+        <td colspan="2" rowspan="2">성명</td>
         <td colspan="2" rowspan="2"></td>
         <td>생년월일</td>
       </tr>
@@ -23,24 +42,24 @@
       </tr>
 
       <tr>
-        <td>이메일</td>
-        <td colspan="4">&nbsp;</td>
+        <td class="col">이메일</td>
+        <td colspan="6">&nbsp;</td>
       </tr>
 
       <tr>
-        <td>현주소</td>
-        <td colspan="4">&nbsp;</td>
+        <td class="col">현주소</td>
+        <td colspan="6">&nbsp;</td>
       </tr>
 
       <tr>
-        <td>연락처</td>
-        <td colspan="4">&nbsp;</td>
+        <td class="col">연락처</td>
+        <td colspan="6">&nbsp;</td>
       </tr>
 
       <tr>
-        <td>기간</td>
-        <td colspan="2">학력사항</td>
-        <td colspan="2">비고</td>
+        <td class="col">기간</td>
+        <td colspan="3">학력사항</td>
+        <td colspan="3">비고</td>
       </tr>
     </table>
   </body>
