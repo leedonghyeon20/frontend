@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding-top: 100px;
+      }
+      .container {
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        background: yellow;
+        position: relative; /* absolute 요소(box .a .b .c)의 부모 역할 */
+      }
+      .box {
+        /* width: 100px; */
+        height: 100px;
+        position: absolute;
+      }
+      .a {
+        background: red;
+        /* right: 500px; */
+        right: 100%;
+        top: 100px;
+      }
+      .b {
+        background-color: aquamarine;
+        right: 200px;
+        top: 100px;
+      }
+      .c {
+        background-color: wheat;
+        /* left: 500px; */
+        left: 100%;
+        bottom: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box a">box aaaaaaaaaaaaaaa</div>
+      <div class="box b">box b</div>
+      <div class="box c">box cccccc</div>
+    </div>
+  </body>
+</html>
