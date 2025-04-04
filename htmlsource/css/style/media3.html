@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 전체 여백 0 */
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      /* body 배경색 : #ecf0f1 */
+      body {
+        background-color: #ecf0f1;
+      }
+      /* wrapper : max-width : 60rem, wudth : 100%, flex  */
+      .wrapper {
+        max-width: 60rem;
+        width: 100%;
+        margin: 2rem auto;
+      }
+      /* flexbg : flex 컨테이너 */
+      .flexbg {
+        display: flex;
+      }
+      /* main : 배경색 흰색, padding : 안쪽여백 25, order 2 */
+      .flexbg main {
+        background-color: white;
+        padding: 25px;
+        order: 2;
+      }
+      /* left : 배경색 #3498db, order 1 */
+      .flexbg .sidebar {
+        padding: 25px;
+        width: 20%;
+      }
+      .flexbg .left {
+        background-color: #3498db;
+        order: 1;
+      }
+      /* right : 배경색 #34495e, order 3 */
+      .flexbg .right {
+        background-color: #34495e;
+        order: 3;
+      }
+
+      /* 481 ~ 768 */
+      @media screen and (max-width: 768px) {
+        .flexbg {
+          /* display: flex; */
+          flex-wrap: wrap;
+        }
+        .flexbg .sidebar {
+          width: 50%;
+        }
+        .flexbg main {
+          width: 100%;
+          order: 1;
+        }
+
+        .flexbg .left {
+          order: 2;
+          width: 50%;
+        }
+        /* right : 배경색 #34495e, order 3 */
+        .flexbg .right {
+          background-color: #34495e;
+          order: 3;
+        }
+      }
+
+      /* 0 ~ 480 */
+      @media screen and (max-width: 480px) {
+        .flexbg .sidebar {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper flexbg">
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas harum, corporis nesciunt obcaecati expedita
+          incidunt impedit quisquam magnam totam tenetur quam maxime? Labore dolore repellat vero quidem? Delectus dolor
+          nostrum rem tenetur, quidem accusamus deserunt quasi quisquam dolorem neque molestiae tempore quos laboriosam
+          minus distinctio at facere, quas sit debitis id quam. Cum minima voluptas voluptatum maiores. Impedit quo ut
+          nulla ea aut modi laborum laudantium aperiam tenetur necessitatibus rem repellendus, architecto quasi placeat
+          voluptatibus totam quisquam delectus? Modi saepe, fuga dolorum ullam quidem aperiam id reiciendis labore in
+          repellat harum quo aliquam similique! Incidunt adipisci voluptatibus eligendi voluptate nulla.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis officia tempora accusamus illum saepe.
+          Ipsam, distinctio possimus? Culpa commodi hic tenetur suscipit nesciunt velit, iure natus, nostrum assumenda
+          sapiente ipsum et harum sunt odio laudantium, asperiores adipisci earum optio rem. Quibusdam fuga maiores
+          alias minima itaque aliquid aperiam illo vitae commodi consequatur fugit odio delectus aspernatur incidunt
+          maxime expedita facilis, vero exercitationem. Minima quam numquam eius? Sit quaerat ducimus vitae quos, ipsam
+          non repellat aut quia ullam vel corrupti esse fuga nostrum minima accusantium sint sapiente qui excepturi
+          facilis, quasi quod inventore eum dignissimos eius? Excepturi doloribus sapiente ipsam expedita!
+        </p>
+      </main>
+      <aside class="sidebar left">
+        <p>You might have some latest posts here on the left</p>
+      </aside>
+      <aside class="sidebar right">
+        <p>And some other widgets here on the right</p>
+      </aside>
+    </div>
+  </body>
+</html>
