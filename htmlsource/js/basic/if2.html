@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 숫자를 입력받아 짝수, 홀수 구분하는 프로그램
+      let num = Number(prompt("숫자를 입력해 주세요"));
+
+      if (num % 2 == 0) {
+        alert("짝수");
+        document.write("짝수");
+      } else if (num % 2 != 0) {
+        alert("홀수");
+        document.write("홀수");
+      } else if (isNaN(num)) {
+        alert("숫자아님");
+        document.write("숫자아님");
+      }
+
+      document.write(num % 2 == 0 ? "<h3>짝수</h3>" : "<h3>홀수</h3>");
+    </script>
+  </body>
+</html>
