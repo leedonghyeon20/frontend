@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <div>
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div>
+        <label for="tel">전화번호</label>
+        <input type="text" name="tel" id="tel" />
+      </div>
+      <button type="submit">전송</button>
+    </form>
+    <script>
+      // 폼 전송 시 submit 중지 후 전화번호가 원하는 형식대로 입력 되었는지 확인하기
+      // 숫자3-숫자4-숫자4
+      const reg = /^\d{3}-\d{4}-\d{4}$/;
+      const reg2 = /^[가-힣]{2,5}$/;
+      // document.querySelector("form").addEventListener("submit", (e) => {
+      // e.preventDefault();
+
+      document.querySelector("#tel").addEventListener("change", (e) => {
+        let origin = e.target;
+        if (!reg.test(origin.value)) {
+          alert("전화번호를 확인해주세요");
+          origin.select();
+          return;
+        }
+      });
+      document.querySelector("#name").addEventListener("change", (e) => {
+        let origin = e.target;
+        if (!reg2.test(origin.value)) {
+          alert("이름을 확인해주세용");
+          origin.select();
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>
