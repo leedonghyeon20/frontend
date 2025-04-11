@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        background: lightblue;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+      }
+      .container li {
+        list-style: none;
+        margin: 0 10px;
+        width: 25%;
+        cursor: pointer;
+      }
+      div {
+        padding: 20px;
+      }
+      table,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>메뉴1</li>
+      <li>메뉴2</li>
+      <li>메뉴3</li>
+      <li>메뉴4</li>
+    </ul>
+    <div></div>
+    <script>
+      // 메뉴1 클릭 시 서버로 요청
+      document.querySelector("li").addEventListener("click", () => {
+        fetch("https://leedonghyeon20.github.io/data/data.txt")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.text();
+          })
+          .then((data) => {
+            console.log(data);
+            document.querySelector("div").innerHTML = data;
+          });
+      });
+
+      // 메뉴2 클릭 시 서버로 요청
+      document.querySelector("ul li:nth-child(2)").addEventListener("click", () => {
+        fetch("https://leedonghyeon20.github.io/data/version.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            console.log(data.codename);
+            let result = `<ul>`;
+            result += `<li>version : ${data.version}</li>`;
+            result += `<li>codename : ${data.codename}</li>`;
+            result += `</ul>`;
+
+            document.querySelector("div").innerHTML = result;
+            // "version : " + data.version + "<br>" + "codename : " + data.codename;
+          });
+      });
+
+      // 메뉴3 클릭 시 서버로 요청
+      document.querySelector("ul li:nth-child(3)").addEventListener("click", () => {
+        fetch("https://leedonghyeon20.github.io/data/version2.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data[0]);
+            console.log(data[1]);
+            console.log(data[2]);
+
+            let result = `<ul>`;
+
+            data.forEach((item, idx) => {
+              result += `<li>version : ${data[idx].version}</li>`;
+              result += `<li>codename : ${data[idx].codename}</li>`;
+            });
+
+            result += `</ul>`;
+            document.querySelector("div").innerHTML = result;
+
+            // data.forEach(element, (idx) => {
+            //   console.log(data[idx]);
+            // });
+
+            // console.log(data.codename);
+            // let result = `<ul>`;
+            // result += `<li>version : ${data.version}</li>`;
+            // result += `<li>codename : ${data.codename}</li>`;
+            // result += `</ul>`;
+            // document.querySelector("div").innerHTML = result;
+          });
+      });
+
+      // 메뉴4 클릭 시 서버로 요청
+      document.querySelector("ul li:nth-child(4)").addEventListener("click", () => {
+        fetch("https://leedonghyeon20.github.io/data/MOCK_DATA.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((data) => {
+            // console.log(data[0]);
+            // console.log(data[1]);
+            // console.log(data[2]);
+
+            // table 태그 작성 후 보여주기
+            // id / first_name / email / gender
+            let result = `<table border="1">`;
+
+            data.forEach((item, idx) => {
+              result += `<td>id : ${data[idx].id}</td>`;
+              result += `<td>first_name : ${data[idx].first_name}</td>`;
+              result += `<td>email : ${data[idx].email}</td>`;
+              result += `<td>gender : ${data[idx].gender}</td>`;
+              result += `<tr></tr>`;
+            });
+
+            result += `</table>`;
+            document.querySelector("div").innerHTML = result;
+          });
+      });
+    </script>
+  </body>
+</html>
